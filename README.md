@@ -10,8 +10,16 @@ This repository contains my installation and setup scripts for various Linux dis
   such as installing non-free drivers and codecs.   
 - Also includes [zypper-unjammed](https://github.com/makesourcenotcode/zypper-unjammed) and sets up an alias for zypper-autoremove.
    
+  ```
+  curl -o ~/tumbleweed_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/tumbleweed_base.sh && chmod a+x ~/tumbleweed_base.sh && ~/tumbleweed_base.sh ; rm ~/tumbleweed_base.sh
+  ```
+   
 ### tumbleweed_rocm_radeon.sh
 - Performs a lightweight **ROCm** installation for **Radeon GPUs**.
+   
+  ```
+  curl -o ~/tumbleweed_rocm_radeon.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/tumbleweed_rocm_radeon.sh && chmod a+x ~/tumbleweed_rocm_radeon.sh && ~/tumbleweed_rocm_radeon.sh ; rm ~/tumbleweed_rocm_radeon.sh
+  ```
    
 ## 🌐 Fedora Workstation
    
@@ -19,8 +27,16 @@ This repository contains my installation and setup scripts for various Linux dis
 - This script automates various maintenance tasks required after a fresh installation,   
   such as installing non-free drivers and codecs.
    
+  ```
+  curl -o ~/fedora_ws_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/fedora_ws_base.sh && chmod a+x ~/fedora_ws_base.sh && ~/fedora_ws_base.sh ; rm ~/fedora_ws_base.sh
+  ```
+   
 ### fedora_ws_rocm_radeon.sh
 - Performs a lightweight **ROCm** installation for **Radeon GPUs**.
+   
+  ```
+  curl -o ~/fedora_ws_rocm_radeon.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/fedora_ws_rocm_radeon.sh && chmod a+x ~/fedora_ws_rocm_radeon.sh && ~/fedora_ws_rocm_radeon.sh ; rm ~/fedora_ws_rocm_radeon.sh
+  ```
    
 # 💡 Tips & Tricks
 Useful information and suggestions that may improve your workflow.
