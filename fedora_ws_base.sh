@@ -2,7 +2,7 @@
 
 # Script by Farid Zellipour
 # https://github.com/FaridZelli
-# Last updated 2024-6-6 7:42 PM
+# Last updated 2024-6-6 7:45 PM
 
 # Check the current user
 USER=$(whoami)
@@ -143,6 +143,7 @@ case $ANSWER in
   2 ) 
     # Adding Flathub
     flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    flatpak remote-modify --enable flathub
     ;;
   3 ) 
     # Proceed with the rest of the script
