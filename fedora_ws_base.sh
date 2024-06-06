@@ -169,7 +169,7 @@ esac
 echo -e "
 \033[33mWould you like to install remove-retired-packages?\033[0m
 
-1) Yes, install and create alias for "fedora-autoremove"
+1) Yes, install remove-retired-packages
 2) No, skip this step
 0) Exit
 "
@@ -180,8 +180,6 @@ case $ANSWER in
   1 ) 
     # Installing remove-retired-packages
     dnf install remove-retired-packages
-    # Creating alias
-    grep -qF 'alias fedora-autoremove="remove-retired-packages && dnf autoremove"' /root/.bashrc || echo 'alias fedora-autoremove="remove-retired-packages && dnf autoremove"' >> /root/.bashrc
     ;;
   2 ) 
     # Proceed with the rest of the script
