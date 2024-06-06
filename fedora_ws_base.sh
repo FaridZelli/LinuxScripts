@@ -2,7 +2,7 @@
 
 # Script by Farid Zellipour
 # https://github.com/FaridZelli
-# Last updated 2024-5-31 10:30 PM
+# Last updated 2024-6-6 7:31 PM
 
 # Check the current user
 USER=$(whoami)
