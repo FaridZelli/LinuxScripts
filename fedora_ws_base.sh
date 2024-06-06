@@ -2,7 +2,7 @@
 
 # Script by Farid Zellipour
 # https://github.com/FaridZelli
-# Last updated 2024-6-6 7:31 PM
+# Last updated 2024-6-6 7:42 PM
 
 # Check the current user
 USER=$(whoami)
@@ -88,8 +88,7 @@ echo -e "
 
 1) Yes, install Intel media drivers (for Intel GPUs)
 2) Yes, install Mesa VAAPI and VDPAU drivers (for AMD GPUs)
-3) Yes, install NVIDIA VAAPI wrapper (for NVIDIA GPUs)
-4) No, skip this step
+3) No, skip this step
 0) Exit
 "
 # User input
@@ -106,10 +105,6 @@ case $ANSWER in
     dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
     ;;
   3 ) 
-    # Installing drivers
-    dnf install libva-nvidia-driver
-    ;;
-  4 ) 
     # Proceed with the rest of the script
     echo "Skipping..."
     ;;
