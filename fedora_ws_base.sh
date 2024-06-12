@@ -2,7 +2,7 @@
 
 # Script by Farid Zellipour
 # https://github.com/FaridZelli
-# Last updated 2024-6-8 3:51 AM
+# Last updated 2024-6-12 8:29 PM
 
 # Check the current user
 USER=$(whoami)
@@ -82,13 +82,14 @@ case $ANSWER in
     ;;
 esac
 
-# Ask whether to enable hardware acceleration
+# Ask whether to setup hardware acceleration
 echo -e "
-\033[33mWould you like to enable hardware acceleration? (Recommended)\033[0m
+\033[33mWould you like to install drivers and runtimes for GPU hardware acceleration? (Recommended)\033[0m
 
-1) Yes, install Intel media drivers (for Intel GPUs)
-2) Yes, install Mesa VAAPI and VDPAU drivers (for AMD GPUs)
-3) No, skip this step
+1) Yes, install everything (for Intel and AMD GPUs)
+2) Yes, install Intel Media Driver and Intel Compute Runtime (for Intel GPUs)
+3) Yes, install Mesa VAAPI and VDPAU drivers (for AMD GPUs)
+4) No, skip this step
 0) Exit
 "
 # User input
@@ -97,14 +98,20 @@ read -p "Your choice:" ANSWER
 case $ANSWER in
   1 ) 
     # Installing drivers
-    dnf install intel-media-driver
+    dnf install intel-media-driver intel-compute-runtime
+    dnf swap mesa-va-drivers mesa-va-drivers-freeworld
+    dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
     ;;
   2 ) 
+    # Installing drivers
+    dnf install intel-media-driver intel-compute-runtime
+    ;;
+  3 ) 
     # Installing drivers
     dnf swap mesa-va-drivers mesa-va-drivers-freeworld
     dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
     ;;
-  3 ) 
+  4 ) 
     # Proceed with the rest of the script
     echo "Skipping..."
     ;;
