@@ -2,7 +2,7 @@
 
 # Script by Farid Zellipour
 # https://github.com/FaridZelli
-# Last updated 2024-6-12 8:29 PM
+# Last updated 2024-6-12 11:09 PM
 
 # Check the current user
 USER=$(whoami)
@@ -63,7 +63,7 @@ case $ANSWER in
     dnf config-manager --enable rpmfusion-nonfree-updates
     # Installing codecs
     dnf swap ffmpeg-free ffmpeg --allowerasing
-    dnf install libavcodec-freeworld gstreamer1-plugins-{base,good,good-extras,bad-freeworld,ugly} gstreamer1-plugin-{openh264,libav} --allowerasing
+    dnf install pipewire-codec-aptx libavcodec-freeworld gstreamer1-plugins-{base,good,good-extras,bad-freeworld,ugly} gstreamer1-plugin-{openh264,libav} --allowerasing
     dnf upgrade @multimedia --allowerasing
     ;;
   2 ) 
