@@ -2,7 +2,7 @@
 
 # Script by Farid Zellipour
 # https://github.com/FaridZelli
-# Last updated 2024-5-31 8:36 PM
+# Last updated 2024-7-25 3:19 PM
 
 # Check the current user
 USER=$(whoami)
@@ -80,8 +80,8 @@ esac
 echo -e "
 \033[33mWould you like to install Flatpak and setup Flathub?\033[0m
 
-1) Yes, install Flatpak and add Flathub + Flathub Beta
-2) Yes, install Flatpak and only add Flathub
+1) Yes, install Flatpak and only add Flathub
+2) Yes, install Flatpak and add Flathub + Flathub Beta
 3) No, skip this step
 0) Exit
 "
@@ -92,18 +92,18 @@ case $ANSWER in
   1 ) 
     # Installing Flatpak
     zypper in flatpak
+    # Adding Flathub
+    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    flatpak remote-modify --enable flathub
+    ;;
+  2 ) 
+    # Installing Flatpak
+    zypper in flatpak
     # Adding Flathub and Flathub Beta
     flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
     flatpak remote-add --if-not-exists flathub-beta https://dl.flathub.org/beta-repo/flathub-beta.flatpakrepo
     flatpak remote-modify --enable flathub
     flatpak remote-modify --enable flathub-beta
-    ;;
-  2 ) 
-    # Installing Flatpak
-    zypper in flatpak
-    # Adding Flathub
-    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-    flatpak remote-modify --enable flathub
     ;;
   3 ) 
     # Proceed with the rest of the script
