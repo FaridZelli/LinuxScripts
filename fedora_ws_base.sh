@@ -84,9 +84,9 @@ esac
 
 # Ask whether to setup hardware acceleration
 echo -e "
-\033[33mWould you like to install drivers and runtimes for GPU hardware acceleration? (Recommended)\033[0m
+\033[33mWould you like to setup hardware video acceleration? (Recommended)\033[0m
 
-1) Yes, install everything (for Intel and AMD GPUs)
+1) Yes, install everything for Intel and AMD GPUs (portability)
 2) Yes, install Intel Media Driver and Intel Compute Runtime (for Intel GPUs)
 3) Yes, install Mesa VAAPI and VDPAU drivers (for AMD GPUs)
 4) No, skip this step
