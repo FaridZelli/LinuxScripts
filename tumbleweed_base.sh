@@ -2,7 +2,7 @@
 
 # Script by Farid Zellipour
 # https://github.com/FaridZelli
-# Last updated 2024-7-25 3:19 PM
+# Last updated 2024-8-7 8:35 PM
 
 # Check the current user
 USER=$(whoami)
@@ -125,20 +125,20 @@ esac
 echo -e "
 \033[33mWould you like to remove all web browsers? (for Flatpak users)\033[0m
 
-1) Yes, remove and lock all browsers
-2) No, skip this step
+1) No, skip this step
+2) Yes, remove and lock all web browsers
 0) Exit
 "
 # User input
 read -p "Your choice:" ANSWER
 # Read input
 case $ANSWER in
-  1 ) 
+  2 ) 
     # Removing web_browser providers (zypper se --provides web_browser)
     zypper rm -n -u chromium elinks falkon links lynx MozillaFirefox seamonkey ungoogled-chromium w3m
     zypper al chromium elinks falkon links lynx MozillaFirefox seamonkey ungoogled-chromium w3m
     ;;
-  2 ) 
+  1 ) 
     # Proceed with the rest of the script
     echo "Skipping..."
     ;;
@@ -158,15 +158,15 @@ esac
 echo -e "
 \033[33mWould you like to install zypper-unjammed?\033[0m
 
-1) Yes, add to home directory and create alias for "zypper-autoremove"
-2) No, skip this step
+1) No, skip this step
+2) Yes, install to /root and create an alias for "zypper-autoremove"
 0) Exit
 "
 # User input
 read -p "Your choice:" ANSWER
 # Read input
 case $ANSWER in
-  1 ) 
+  2 ) 
     # Adding zypper-unjammed to home directory
     # https://github.com/makesourcenotcode/zypper-unjammed
     curl -o /root/.zypper-unjammed https://raw.githubusercontent.com/makesourcenotcode/zypper-unjammed/main/zypper-unjammed
@@ -175,7 +175,7 @@ case $ANSWER in
     grep -qF 'alias zypper-unjammed="/root/.zypper-unjammed"' /root/.bashrc || echo 'alias zypper-unjammed="/root/.zypper-unjammed"' >> /root/.bashrc
     grep -qF 'alias zypper-autoremove="/root/.zypper-unjammed autoremove"' /root/.bashrc || echo 'alias zypper-autoremove="/root/.zypper-unjammed autoremove"' >> /root/.bashrc
     ;;
-  2 ) 
+  1 ) 
     # Proceed with the rest of the script
     echo "Skipping..."
     ;;
