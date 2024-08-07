@@ -2,7 +2,7 @@
 
 # Script by Farid Zellipour
 # https://github.com/FaridZelli
-# Last updated 2024-7-25 3:17 PM
+# Last updated 2024-8-7 8:42 PM
 
 # Check the current user
 USER=$(whoami)
@@ -86,7 +86,7 @@ esac
 echo -e "
 \033[33mWould you like to setup hardware video acceleration? (Recommended)\033[0m
 
-1) Yes, install everything for Intel and AMD GPUs (portability)
+1) Yes, install everything for Intel and AMD GPUs
 2) Yes, install Intel Media Driver and Intel Compute Runtime (for Intel GPUs)
 3) Yes, install Mesa VAAPI and VDPAU drivers (for AMD GPUs)
 4) No, skip this step
