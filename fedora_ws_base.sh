@@ -2,7 +2,7 @@
 
 # Script by Farid Zellipour
 # https://github.com/FaridZelli
-# Last updated 2024-8-7 8:42 PM
+# Last updated 2024-8-22 4:46 AM
 
 # Check the current user
 USER=$(whoami)
@@ -16,7 +16,7 @@ else
   # Non-root user detected
   echo -e "
 --------------------------------------------------
-\033[33mWARNING: You do not seem to be logged in as root!\033[0m
+\033[31mWARNING: You do not seem to be logged in as root!\033[0m
 --------------------------------------------------"
 fi
 
