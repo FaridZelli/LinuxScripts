@@ -14,7 +14,7 @@ This repository contains my installation and setup scripts for various Linux dis
   ```
    
 ### fedora_ws_rocm_radeon.sh
-- Performs a lightweight **ROCm** installation for **Radeon GPUs**.
+- Performs a lightweight **ROCm OpenCL** installation for **Radeon GPUs**.
    
   ```
   curl -o ~/fedora_ws_rocm_radeon.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/fedora_ws_rocm_radeon.sh && chmod a+x ~/fedora_ws_rocm_radeon.sh && ~/fedora_ws_rocm_radeon.sh ; rm -f ~/fedora_ws_rocm_radeon.sh
@@ -32,7 +32,7 @@ This repository contains my installation and setup scripts for various Linux dis
   ```
    
 ### tumbleweed_rocm_radeon.sh
-- Performs a lightweight **ROCm** installation for **Radeon GPUs**.
+- Performs a lightweight **ROCm OpenCL** installation for **Radeon GPUs**.
    
   ```
   curl -o ~/tumbleweed_rocm_radeon.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/tumbleweed_rocm_radeon.sh && chmod a+x ~/tumbleweed_rocm_radeon.sh && ~/tumbleweed_rocm_radeon.sh ; rm -f ~/tumbleweed_rocm_radeon.sh
@@ -57,7 +57,7 @@ grep -qF 'unset HISTFILE' ~/.bashrc || echo 'unset HISTFILE' >> ~/.bashrc
 echo 'export PS1="\[$(tput setaf 216)\]\u\[$(tput setaf 220)\]@\[$(tput setaf 222)\]\h \[$(tput setaf 229)\]\w \[$(tput sgr0)\]$ "' >> ~/.bashrc
 ```
 ## About Browsers
-There are security and usability advantages to installing web browsers via Flatpak.   
+There are usability advantages to installing web browsers via Flatpak.   
 I strongly recommend [Firefox](https://flathub.org/apps/org.mozilla.firefox) for daily use:
 ```
 flatpak install flathub org.mozilla.firefox
