@@ -2,6 +2,7 @@
 
 # Script by Farid Zellipour
 # https://github.com/FaridZelli
+# Last updated 2024-8-22 4:38 AM
 
 # Check the current user
 USER=$(whoami)
@@ -15,13 +16,13 @@ else
   # Non-root user detected
   echo -e "
 --------------------------------------------------
-\033[33mWARNING: You do not seem to be logged in as root!\033[0m
+\033[31mWARNING: You do not seem to be logged in as root!\033[0m
 --------------------------------------------------"
 fi
 
 # Ask whether to proceed
 echo -e "
-This script will install and configure ROCm on your \033[36mFedora Workstation\033[0m system.
+This script will install and configure ROCm OpenCL 6.2 on your \033[36mFedora Workstation\033[0m system.
 I am not responsible for any damage or data loss that may occur.
 
 \033[33mDo you wish to continue? (Y/N/R)\033[0m
@@ -36,8 +37,9 @@ case $ANSWER in
   [Rr]* ) 
     # Proceed with the rest of the script
     echo "Removing ROCm..."
-    dnf remove rocm-opencl rocm-opencl-devel rocminfo rocm-smi-lib rocm-opencl-icd-loader clinfo
-    rm /etc/yum.repos.d/rocm.repo
+    dnf remove rocm-opencl rocm-opencl-devel rocm-opencl-icd-loader rocm-smi-lib rocminfo
+    rm -f /etc/yum.repos.d/rocm.repo
+    rm -f /etc/yum.repos.d/amdgpu.repo
     dnf clean all
     echo -e "
 --------------------------------------------------
@@ -52,19 +54,33 @@ case $ANSWER in
     ;;
 esac
 
+rm -f /etc/yum.repos.d/rocm.repo
+rm -f /etc/yum.repos.d/amdgpu.repo
+
 tee --append /etc/yum.repos.d/rocm.repo <<EOF
-[ROCm-latest]
-name=ROCm
+[rocm]
+name=ROCm 6.2
 enabled=1
-baseurl=https://repo.radeon.com/rocm/yum/latest/main
-priority=90
+baseurl=https://repo.radeon.com/rocm/el9/6.2/main/
+priority=50
+gpgcheck=1
+gpgkey=https://repo.radeon.com/rocm/rocm.gpg.key
+EOF
+
+tee --append /etc/yum.repos.d/amdgpu.repo <<EOF
+[amdgpu]
+name=AMDGPU 6.2
+enabled=1
+baseurl=https://repo.radeon.com/amdgpu/6.2/el/9.4/main/x86_64/
+priority=50
 gpgcheck=1
 gpgkey=https://repo.radeon.com/rocm/rocm.gpg.key
 EOF
 
 dnf config-manager --add-repo /etc/yum.repos.d/rocm.repo
+dnf config-manager --add-repo /etc/yum.repos.d/amdgpu.repo
 dnf clean all
-dnf install rocm-opencl rocm-opencl-devel rocminfo rocm-smi-lib rocm-opencl-icd-loader clinfo
+dnf install rocm-opencl rocm-opencl-devel rocm-opencl-icd-loader rocm-smi-lib rocminfo clinfo
 
 # End of script
 echo -e "
