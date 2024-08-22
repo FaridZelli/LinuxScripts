@@ -10,14 +10,14 @@ This repository contains my installation and setup scripts for various Linux dis
   such as installing non-free drivers and codecs.
    
   ```
-  curl -o ~/fedora_ws_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/fedora_ws_base.sh && chmod a+x ~/fedora_ws_base.sh && ~/fedora_ws_base.sh ; rm ~/fedora_ws_base.sh
+  curl -o ~/fedora_ws_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/fedora_ws_base.sh && chmod a+x ~/fedora_ws_base.sh && ~/fedora_ws_base.sh ; rm -f ~/fedora_ws_base.sh
   ```
    
 ### fedora_ws_rocm_radeon.sh
 - Performs a lightweight **ROCm** installation for **Radeon GPUs**.
    
   ```
-  curl -o ~/fedora_ws_rocm_radeon.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/fedora_ws_rocm_radeon.sh && chmod a+x ~/fedora_ws_rocm_radeon.sh && ~/fedora_ws_rocm_radeon.sh ; rm ~/fedora_ws_rocm_radeon.sh
+  curl -o ~/fedora_ws_rocm_radeon.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/fedora_ws_rocm_radeon.sh && chmod a+x ~/fedora_ws_rocm_radeon.sh && ~/fedora_ws_rocm_radeon.sh ; rm -f ~/fedora_ws_rocm_radeon.sh
   ```
    
 ## 🦎 openSUSE Tumbleweed
@@ -28,14 +28,14 @@ This repository contains my installation and setup scripts for various Linux dis
 - Also includes [zypper-unjammed](https://github.com/makesourcenotcode/zypper-unjammed) and sets up an alias for zypper-autoremove.
    
   ```
-  curl -o ~/tumbleweed_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/tumbleweed_base.sh && chmod a+x ~/tumbleweed_base.sh && ~/tumbleweed_base.sh ; rm ~/tumbleweed_base.sh
+  curl -o ~/tumbleweed_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/tumbleweed_base.sh && chmod a+x ~/tumbleweed_base.sh && ~/tumbleweed_base.sh ; rm -f ~/tumbleweed_base.sh
   ```
    
 ### tumbleweed_rocm_radeon.sh
 - Performs a lightweight **ROCm** installation for **Radeon GPUs**.
    
   ```
-  curl -o ~/tumbleweed_rocm_radeon.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/tumbleweed_rocm_radeon.sh && chmod a+x ~/tumbleweed_rocm_radeon.sh && ~/tumbleweed_rocm_radeon.sh ; rm ~/tumbleweed_rocm_radeon.sh
+  curl -o ~/tumbleweed_rocm_radeon.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/tumbleweed_rocm_radeon.sh && chmod a+x ~/tumbleweed_rocm_radeon.sh && ~/tumbleweed_rocm_radeon.sh ; rm -f ~/tumbleweed_rocm_radeon.sh
   ```
    
 # 💡 Tips & Tricks
