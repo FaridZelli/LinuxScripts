@@ -1,7 +1,7 @@
 # 📚️ Linux Scripts
 This repository contains my installation and setup scripts for various Linux distributions.
    
-**Note:** All scripts must be run as **root**.
+ⓘ All scripts must be run as **root**.
    
 ## 🌐 Fedora Workstation
    
