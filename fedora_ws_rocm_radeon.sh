@@ -2,7 +2,7 @@
 
 # Script by Farid Zellipour
 # https://github.com/FaridZelli
-# Last updated 2024-8-22 4:38 AM
+# Last updated 2024-11-15 7:38 PM
 
 # Check the current user
 USER=$(whoami)
@@ -59,9 +59,9 @@ rm -f /etc/yum.repos.d/amdgpu.repo
 
 tee --append /etc/yum.repos.d/rocm.repo <<EOF
 [rocm]
-name=ROCm 6.2
+name=ROCm 6.2.4
 enabled=1
-baseurl=https://repo.radeon.com/rocm/el9/6.2/main/
+baseurl=https://repo.radeon.com/rocm/el9/6.2.4/main/
 priority=50
 gpgcheck=1
 gpgkey=https://repo.radeon.com/rocm/rocm.gpg.key
@@ -69,16 +69,16 @@ EOF
 
 tee --append /etc/yum.repos.d/amdgpu.repo <<EOF
 [amdgpu]
-name=AMDGPU 6.2
+name=AMDGPU 6.2.4
 enabled=1
-baseurl=https://repo.radeon.com/amdgpu/6.2/el/9.4/main/x86_64/
+baseurl=https://repo.radeon.com/amdgpu/6.2.4/el/9.4/main/x86_64/
 priority=50
 gpgcheck=1
 gpgkey=https://repo.radeon.com/rocm/rocm.gpg.key
 EOF
 
-dnf config-manager --add-repo /etc/yum.repos.d/rocm.repo
-dnf config-manager --add-repo /etc/yum.repos.d/amdgpu.repo
+dnf config-manager addrepo --from-repofile=/etc/yum.repos.d/rocm.repo
+dnf config-manager addrepo --from-repofile=/etc/yum.repos.d/amdgpu.repo
 dnf clean all
 dnf install rocm-opencl rocm-opencl-devel rocm-opencl-icd-loader rocm-smi-lib rocminfo clinfo
 
