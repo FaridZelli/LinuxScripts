@@ -56,11 +56,11 @@ case $ANSWER in
   1 ) 
     # Adding RPM Fusion repository
     dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-    dnf config-manager --enable fedora-cisco-openh264
-    dnf config-manager --enable rpmfusion-free
-    dnf config-manager --enable rpmfusion-free-updates
-    dnf config-manager --enable rpmfusion-nonfree
-    dnf config-manager --enable rpmfusion-nonfree-updates
+    dnf config-manager setopt fedora-cisco-openh264.enabled=1
+    dnf config-manager setopt rpmfusion-free.enabled=1
+    dnf config-manager setopt rpmfusion-free-updates.enabled=1
+    dnf config-manager setopt rpmfusion-nonfree.enabled=1
+    dnf config-manager setopt rpmfusion-nonfree-updates.enabled=1
     # Installing codecs
     dnf swap ffmpeg-free ffmpeg --allowerasing
     dnf install pipewire-codec-aptx libavcodec-freeworld gstreamer1-plugins-{base,good,good-extras,bad-freeworld,ugly} gstreamer1-plugin-{openh264,libav} --allowerasing
