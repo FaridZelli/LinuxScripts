@@ -2,7 +2,7 @@
 
 # Script by Farid Zellipour
 # https://github.com/FaridZelli
-# Last updated 2024-11-17 2:12 AM
+# Last updated 2024-11-17 2:49 AM
 
 # Check the current user
 USER=$(whoami)
@@ -22,7 +22,7 @@ fi
 
 # Ask whether to proceed
 echo -e "
-This script will install and configure ROCm OpenCL 6.2.4 on your \033[36mFedora Workstation\033[0m system.
+This script will install and configure ROCm OpenCL 6.2.3 on your \033[36mFedora Workstation\033[0m system.
 I am not responsible for any damage or data loss that may occur.
 
 \033[33mDo you wish to continue? (Y/N/R)\033[0m
@@ -59,9 +59,9 @@ rm -f /etc/yum.repos.d/amdgpu.repo
 
 tee --append /etc/yum.repos.d/rocm.repo <<EOF
 [rocm]
-name=ROCm 6.2.4
+name=ROCm 6.2.3
 enabled=1
-baseurl=https://repo.radeon.com/rocm/el9/6.2.4/main/
+baseurl=https://repo.radeon.com/rocm/el9/6.2.3/main/
 priority=50
 gpgcheck=1
 gpgkey=https://repo.radeon.com/rocm/rocm.gpg.key
@@ -69,9 +69,9 @@ EOF
 
 tee --append /etc/yum.repos.d/amdgpu.repo <<EOF
 [amdgpu]
-name=AMDGPU 6.2.4
+name=AMDGPU 6.2.3
 enabled=1
-baseurl=https://repo.radeon.com/amdgpu/6.2.4/el/9.4/main/x86_64/
+baseurl=https://repo.radeon.com/amdgpu/6.2.3/el/9.4/main/x86_64/
 priority=50
 gpgcheck=1
 gpgkey=https://repo.radeon.com/rocm/rocm.gpg.key
