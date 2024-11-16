@@ -2,7 +2,7 @@
 
 # Script by Farid Zellipour
 # https://github.com/FaridZelli
-# Last updated 2024-11-15 7:38 PM
+# Last updated 2024-11-17 2:12 AM
 
 # Check the current user
 USER=$(whoami)
@@ -22,7 +22,7 @@ fi
 
 # Ask whether to proceed
 echo -e "
-This script will install and configure ROCm OpenCL 6.2 on your \033[36mFedora Workstation\033[0m system.
+This script will install and configure ROCm OpenCL 6.2.4 on your \033[36mFedora Workstation\033[0m system.
 I am not responsible for any damage or data loss that may occur.
 
 \033[33mDo you wish to continue? (Y/N/R)\033[0m
