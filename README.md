@@ -13,13 +13,6 @@ This repository contains my installation and setup scripts for various Linux dis
   curl -o ~/fedora_ws_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/fedora_ws_base.sh && chmod a+x ~/fedora_ws_base.sh && ~/fedora_ws_base.sh ; rm -f ~/fedora_ws_base.sh
   ```
    
-### fedora_ws_rocm_radeon.sh
-- Performs a lightweight **ROCm OpenCL** installation for **Radeon GPUs**.
-   
-  ```
-  curl -o ~/fedora_ws_rocm_radeon.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/fedora_ws_rocm_radeon.sh && chmod a+x ~/fedora_ws_rocm_radeon.sh && ~/fedora_ws_rocm_radeon.sh ; rm -f ~/fedora_ws_rocm_radeon.sh
-  ```
-   
 ## 🦎 openSUSE Tumbleweed
    
 ### tumbleweed_base.sh
@@ -29,13 +22,6 @@ This repository contains my installation and setup scripts for various Linux dis
    
   ```
   curl -o ~/tumbleweed_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/tumbleweed_base.sh && chmod a+x ~/tumbleweed_base.sh && ~/tumbleweed_base.sh ; rm -f ~/tumbleweed_base.sh
-  ```
-   
-### tumbleweed_rocm_radeon.sh
-- Performs a lightweight **ROCm OpenCL** installation for **Radeon GPUs**.
-   
-  ```
-  curl -o ~/tumbleweed_rocm_radeon.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/tumbleweed_rocm_radeon.sh && chmod a+x ~/tumbleweed_rocm_radeon.sh && ~/tumbleweed_rocm_radeon.sh ; rm -f ~/tumbleweed_rocm_radeon.sh
   ```
    
 # 💡 Tips & Tricks
