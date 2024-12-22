@@ -38,17 +38,16 @@ If you prefer not to save your command history
 ```
 grep -qF 'unset HISTFILE' ~/.bashrc || echo 'unset HISTFILE' >> ~/.bashrc
 ```
-- Customize your prompt [(linrock/bash-prompt-generator)](https://github.com/linrock/bash-prompt-generator)
+- Customize your prompt:   
+[linrock/bash-prompt-generator](https://github.com/linrock/bash-prompt-generator)
 ```
 echo 'export PS1="\[$(tput setaf 216)\]\u\[$(tput setaf 220)\]@\[$(tput setaf 222)\]\h \[$(tput setaf 229)\]\w \[$(tput sgr0)\]$ "' >> ~/.bashrc
-```
-## About Browsers
-There are usability advantages to installing web browsers via Flatpak.   
-I strongly recommend [Firefox](https://flathub.org/apps/org.mozilla.firefox) for daily use:
-```
-flatpak install flathub org.mozilla.firefox
 ```
 ## Flatpaks and AppImages
 Suggested tools:
 - [Flatseal](https://flathub.org/apps/com.github.tchx84.Flatseal) - Flatpak permission manager
 - [Gear Lever](https://flathub.org/apps/it.mijorus.gearlever) - AppImage helper
+## Security Auditing
+Suggested tools:
+- [Lynis](https://github.com/CISOfy/lynis) - Security auditing tool for Linux
+- [ssh-audit](https://github.com/jtesta/ssh-audit) - SSH server & client security auditing
