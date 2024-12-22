@@ -121,38 +121,8 @@ case $ANSWER in
     ;;
 esac
 
-# Ask whether to remove web browsers
-echo -e "
-\033[33mWould you like to remove all web browsers? (for Flatpak users)\033[0m
-
-1) No, skip this step
-2) Yes, remove and lock all web browsers
-0) Exit
-"
-# User input
-read -p "Your choice:" ANSWER
-# Read input
-case $ANSWER in
-  2 ) 
-    # Removing web_browser providers (zypper se --provides web_browser)
-    zypper rm -n -u chromium elinks falkon links lynx MozillaFirefox seamonkey ungoogled-chromium w3m
-    zypper al chromium elinks falkon links lynx MozillaFirefox seamonkey ungoogled-chromium w3m
-    ;;
-  1 ) 
-    # Proceed with the rest of the script
-    echo "Skipping..."
-    ;;
-  0 ) 
-    # Exit the script
-    echo "Stopping the script..."
-    exit 1
-    ;;
-  * )
-    # Stop the script for any other input
-    echo "Invalid input, stopping the script..."
-    exit 1
-    ;;
-esac
+# (REMOVED) Ask whether to remove web browsers
+# Removing web_browser providers (zypper se --provides web_browser)
 
 # Ask whether to install zypper-unjammed
 echo -e "
