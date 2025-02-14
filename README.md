@@ -3,8 +3,7 @@ This repository contains my installation and setup scripts for various Linux dis
    
 ⓘ All scripts must be run as **root**.
    
-## 🌐 Fedora Workstation
-✅ Actively maintained (2025/02/14 - Fedora 41)
+## 🌐 Fedora Workstation 41
    
 ### fedora_ws_base.sh
 - This script automates various maintenance tasks required after a fresh installation,   
