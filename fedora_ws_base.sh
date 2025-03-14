@@ -2,7 +2,7 @@
 
 # Script by Farid Zellipour
 # https://github.com/FaridZelli
-# Last updated 2024-11-15 7:37 PM
+# Last updated 2025-03-14 11:06 PM
 
 # Check the current user
 USER=$(whoami)
@@ -22,7 +22,7 @@ fi
 
 # Ask whether to proceed
 echo -e "
-This script will reconfigure your \033[36mFedora Workstation\033[0m environment.
+This script will reconfigure your \033[36mFedora Workstation 41\033[0m environment.
 I am not responsible for any damage or data loss that may occur.
 
 \033[33mDo you wish to continue? (Y/N)\033[0m
@@ -43,9 +43,9 @@ esac
 
 # Ask whether to install codecs
 echo -e "
-\033[33mWould you like to install multimedia codecs from RPM Fusion? (Recommended)\033[0m
+\033[33mWould you like to install non-free multimedia codecs from RPM Fusion? (Recommended)\033[0m
 
-1) Yes, install proprietary codecs
+1) Yes, install non-free multimedia codecs
 2) No, skip this step
 0) Exit
 "
@@ -86,9 +86,9 @@ esac
 echo -e "
 \033[33mWould you like to setup hardware video acceleration? (Recommended)\033[0m
 
-1) Yes, install everything for Intel and AMD GPUs
-2) Yes, install Intel Media Driver and Intel Compute Runtime (for Intel GPUs)
-3) Yes, install Mesa VAAPI and VDPAU drivers (for AMD GPUs)
+1) Yes, install everything required by Intel and AMD GPUs
+2) Only install Intel Media Driver and Intel Compute Runtime
+3) Only install Mesa VAAPI and VDPAU drivers
 4) No, skip this step
 0) Exit
 "
@@ -132,7 +132,7 @@ echo -e "
 \033[33mWould you like to install Flatpak and setup Flathub?\033[0m
 
 1) Yes, install Flatpak and only add Flathub
-2) Yes, install Flatpak and add Flathub + Flathub Beta
+2) Yes, install Flatpak and add Flathub along with Flathub Beta
 3) No, skip this step
 0) Exit
 "
