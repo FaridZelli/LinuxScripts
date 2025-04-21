@@ -17,8 +17,7 @@ This repository contains my post-installation scripts for various Linux distribu
    
 ### tumbleweed_base.sh (not actively maintained)
 - This script automates various maintenance tasks required after a fresh installation,   
-  such as installing non-free drivers and codecs.   
-- Also includes [zypper-unjammed](https://github.com/makesourcenotcode/zypper-unjammed) and sets up an alias for zypper-autoremove.
+  such as installing non-free drivers and codecs.
    
   ```
   curl -o ~/tumbleweed_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/tumbleweed_base.sh && chmod a+x ~/tumbleweed_base.sh && ~/tumbleweed_base.sh ; rm -f ~/tumbleweed_base.sh
