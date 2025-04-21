@@ -1,9 +1,9 @@
 # 📚️ Linux Scripts
-This repository contains my installation and setup scripts for various Linux distributions.
+This repository contains my post-installation scripts for various Linux distributions.
    
 ⓘ All scripts must be run as **root**.
    
-## 🌐 Fedora Workstation 41
+## Fedora Workstation 42
    
 ### fedora_ws_base.sh
 - This script automates various maintenance tasks required after a fresh installation,   
@@ -13,10 +13,9 @@ This repository contains my installation and setup scripts for various Linux dis
   curl -o ~/fedora_ws_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/fedora_ws_base.sh && chmod a+x ~/fedora_ws_base.sh && ~/fedora_ws_base.sh ; rm -f ~/fedora_ws_base.sh
   ```
    
-## 🦎 openSUSE Tumbleweed
-⚠️ Not actively maintained
+## openSUSE Tumbleweed
    
-### tumbleweed_base.sh
+### tumbleweed_base.sh (not actively maintained)
 - This script automates various maintenance tasks required after a fresh installation,   
   such as installing non-free drivers and codecs.   
 - Also includes [zypper-unjammed](https://github.com/makesourcenotcode/zypper-unjammed) and sets up an alias for zypper-autoremove.
@@ -26,7 +25,7 @@ This repository contains my installation and setup scripts for various Linux dis
   ```
    
 # 💡 Tips & Tricks
-Useful information and suggestions that may improve your workflow.
+Useful suggestions to improve your workflow.
    
 ## Personalize Bash
 - Enable menu-complete:   
