@@ -2,7 +2,7 @@
 
 # Script by Farid Zellipour
 # https://github.com/FaridZelli
-# Last updated 2024-8-22 4:47 AM
+# Last updated 2025-04-21 10:09 AM
 
 # Check the current user
 USER=$(whoami)
@@ -23,7 +23,7 @@ fi
 # Ask whether to proceed
 echo -e "
 This script will reconfigure your \033[32mopenSUSE Tumbleweed\033[0m environment.
-I am not responsible for any damage or data loss that may occur.
+I am not responsible for any damages or data loss that may occur.
 
 \033[33mDo you wish to continue? (Y/N)\033[0m
 "
@@ -43,7 +43,7 @@ esac
 
 # Ask whether to install codecs
 echo -e "
-\033[33mWould you like to install multimedia codecs from Packman? (Recommended)\033[0m
+\033[33mWould you like to install non-free multimedia codecs from Packman? (Recommended)\033[0m
 
 1) Yes, install proprietary codecs
 2) No, skip this step
@@ -81,7 +81,7 @@ echo -e "
 \033[33mWould you like to install Flatpak and setup Flathub?\033[0m
 
 1) Yes, install Flatpak and only add Flathub
-2) Yes, install Flatpak and add Flathub + Flathub Beta
+2) Yes, install Flatpak and add Flathub along with Flathub Beta
 3) No, skip this step
 0) Exit
 "
@@ -124,42 +124,7 @@ esac
 # (REMOVED) Ask whether to remove web browsers
 # Removing web_browser providers (zypper se --provides web_browser)
 
-# Ask whether to install zypper-unjammed
-echo -e "
-\033[33mWould you like to install zypper-unjammed?\033[0m
-
-1) No, skip this step
-2) Yes, install to /root and create an alias for "zypper-autoremove"
-0) Exit
-"
-# User input
-read -p "Your choice:" ANSWER
-# Read input
-case $ANSWER in
-  2 ) 
-    # Adding zypper-unjammed to home directory
-    # https://github.com/makesourcenotcode/zypper-unjammed
-    curl -o /root/.zypper-unjammed https://raw.githubusercontent.com/makesourcenotcode/zypper-unjammed/main/zypper-unjammed
-    chmod +x /root/.zypper-unjammed
-    # Creating alias
-    grep -qF 'alias zypper-unjammed="/root/.zypper-unjammed"' /root/.bashrc || echo 'alias zypper-unjammed="/root/.zypper-unjammed"' >> /root/.bashrc
-    grep -qF 'alias zypper-autoremove="/root/.zypper-unjammed autoremove"' /root/.bashrc || echo 'alias zypper-autoremove="/root/.zypper-unjammed autoremove"' >> /root/.bashrc
-    ;;
-  1 ) 
-    # Proceed with the rest of the script
-    echo "Skipping..."
-    ;;
-  0 ) 
-    # Exit the script
-    echo "Stopping the script..."
-    exit 1
-    ;;
-  * )
-    # Stop the script for any other input
-    echo "Invalid input, stopping the script..."
-    exit 1
-    ;;
-esac
+# (REMOVED) Ask whether to install zypper-unjammed
 
 # End of script
 echo -e "
