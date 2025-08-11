@@ -2,7 +2,7 @@
 
 # Script by Farid Zellipour
 # https://github.com/FaridZelli
-# Last updated 2025-04-21 10:12 AM
+# Last updated 2025-08-11 8:35 PM
 
 # Check the current user
 USER=$(whoami)
@@ -22,8 +22,16 @@ fi
 
 # Ask whether to proceed
 echo -e "
+https://github.com/FaridZelli/LinuxScripts
+
 This script will reconfigure your \033[36mFedora Workstation 42\033[0m environment.
-I am not responsible for any damages or data loss that may occur.
+
+By typing Y and pressing Enter, you agree that the author
+bears no liability for any loss, damage or data corruption,
+whether direct, indirect, incidental, consequential or punitive,
+that may result from its use.
+
+Continued use assumes your acceptance of these terms.
 
 \033[33mDo you wish to continue? (Y/N)\033[0m
 "
