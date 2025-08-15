@@ -1,8 +1,8 @@
-#! /bin/bash
+#!/bin/bash
 
 # Script by Farid Zellipour
 # https://github.com/FaridZelli
-# Last updated 2025-08-11 8:35 PM
+# Last updated 2025-08-15 10:21 PM
 
 # Check the current user
 USER=$(whoami)
@@ -39,7 +39,7 @@ Continued use assumes your acceptance of these terms.
 read -p "Your choice:" ANSWER
 # Read input
 case $ANSWER in
-  [Yy]* ) 
+  Y|y )
     # Proceed with the rest of the script
     ;;
   * )
