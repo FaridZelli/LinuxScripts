@@ -3,7 +3,7 @@ This repository contains my post-installation scripts for various Linux distribu
    
 ⓘ All scripts must be run as **root**.
    
-## Fedora Workstation 42
+## Fedora Workstation 43
    
 ### fedora_ws_base.sh
 - This script automates various maintenance tasks required after a fresh installation,   
