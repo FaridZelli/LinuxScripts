@@ -8,6 +8,10 @@ This repository contains my post-installation scripts for various Linux distribu
 ### fedora_ws_base.sh
 - This script automates various maintenance tasks required after a fresh installation,   
   such as installing non-free drivers and codecs.
+- Please ensure that your system is up-to-date before running the script.
+  ```
+  dnf clean all && dnf distro-sync --refresh && reboot
+  ```
    
   ```
   curl -o ~/fedora_ws_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/fedora_ws_base.sh && chmod a+x ~/fedora_ws_base.sh && ~/fedora_ws_base.sh ; rm -f ~/fedora_ws_base.sh
@@ -18,6 +22,10 @@ This repository contains my post-installation scripts for various Linux distribu
 ### tumbleweed_base.sh (not actively maintained)
 - This script automates various maintenance tasks required after a fresh installation,   
   such as installing non-free drivers and codecs.
+- Please ensure that your system is up-to-date before running the script.
+  ```
+  zypper clean && zypper refresh && zypper dup && reboot
+  ```
    
   ```
   curl -o ~/tumbleweed_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/tumbleweed_base.sh && chmod a+x ~/tumbleweed_base.sh && ~/tumbleweed_base.sh ; rm -f ~/tumbleweed_base.sh
