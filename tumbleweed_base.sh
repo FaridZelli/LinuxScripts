@@ -2,7 +2,7 @@
 
 # Script by Farid Zellipour
 # https://github.com/FaridZelli
-# Last updated 2025-08-15 10:22 PM
+# Last updated 2025-12-19 11:01 PM
 
 # Check the current user
 USER=$(whoami)
@@ -25,6 +25,8 @@ echo -e "
 https://github.com/FaridZelli/LinuxScripts
 
 This script will reconfigure your \033[32mopenSUSE Tumbleweed\033[0m environment.
+
+Please ensure your system is already up-to-date.
 
 By typing Y and pressing Enter, you agree that the author
 bears no liability for any loss, damage or data corruption,
