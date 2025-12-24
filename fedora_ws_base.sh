@@ -2,7 +2,7 @@
 
 # Script by Farid Zellipour
 # https://github.com/FaridZelli
-# Last updated 2025-12-19 10:57 PM
+# Last updated 2025-12-24 5:25 PM
 
 # Check the current user
 USER=$(whoami)
@@ -98,7 +98,7 @@ echo -e "
 
 1) Yes, install everything required by Intel and AMD GPUs
 2) Only install Intel Media Driver and Intel Compute Runtime
-3) Only install Mesa VAAPI and VDPAU drivers
+3) Only install Mesa VA-API and Vulkan drivers from RPM Fusion
 4) No, skip this step
 0) Exit
 "
@@ -110,7 +110,7 @@ case $ANSWER in
     # Installing drivers
     dnf install intel-media-driver intel-compute-runtime
     dnf swap mesa-va-drivers mesa-va-drivers-freeworld
-    dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
+    dnf swap mesa-vulkan-drivers mesa-vulkan-drivers-freeworld
     ;;
   2 ) 
     # Installing drivers
@@ -119,7 +119,7 @@ case $ANSWER in
   3 ) 
     # Installing drivers
     dnf swap mesa-va-drivers mesa-va-drivers-freeworld
-    dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
+    dnf swap mesa-vulkan-drivers mesa-vulkan-drivers-freeworld
     ;;
   4 ) 
     # Proceed with the rest of the script
