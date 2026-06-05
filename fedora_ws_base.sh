@@ -2,7 +2,7 @@
 
 # Script by Farid Zellipour
 # https://github.com/FaridZelli
-# Last updated 2025-12-24 5:25 PM
+# Last updated 2026-06-05 7:20 PM
 
 # Check the current user
 USER=$(whoami)
@@ -24,7 +24,7 @@ fi
 echo -e "
 https://github.com/FaridZelli/LinuxScripts
 
-This script will reconfigure your \033[36mFedora Workstation 43\033[0m environment.
+This script will reconfigure your \033[36mFedora Workstation 44\033[0m environment.
 
 Please ensure your system is already up-to-date.
 
@@ -109,8 +109,9 @@ case $ANSWER in
   1 ) 
     # Installing drivers
     dnf install intel-media-driver intel-compute-runtime
-    dnf swap mesa-va-drivers mesa-va-drivers-freeworld
-    dnf swap mesa-vulkan-drivers mesa-vulkan-drivers-freeworld
+    dnf install mesa-va-drivers-freeworld
+    # If using i686 compat libraries (for steam or alikes):
+    # dnf install mesa-va-drivers-freeworld.i686
     ;;
   2 ) 
     # Installing drivers
@@ -118,8 +119,9 @@ case $ANSWER in
     ;;
   3 ) 
     # Installing drivers
-    dnf swap mesa-va-drivers mesa-va-drivers-freeworld
-    dnf swap mesa-vulkan-drivers mesa-vulkan-drivers-freeworld
+    dnf install mesa-va-drivers-freeworld
+    # If using i686 compat libraries (for steam or alikes):
+    # dnf install mesa-va-drivers-freeworld.i686
     ;;
   4 ) 
     # Proceed with the rest of the script
