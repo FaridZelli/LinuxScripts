@@ -110,8 +110,7 @@ case $ANSWER in
     # Installing drivers
     dnf install intel-media-driver intel-compute-runtime
     dnf install mesa-va-drivers-freeworld
-    # If using i686 compat libraries (for steam or alikes):
-    # dnf install mesa-va-drivers-freeworld.i686
+    dnf swap mesa-vulkan-drivers mesa-vulkan-drivers-freeworld
     ;;
   2 ) 
     # Installing drivers
@@ -120,8 +119,7 @@ case $ANSWER in
   3 ) 
     # Installing drivers
     dnf install mesa-va-drivers-freeworld
-    # If using i686 compat libraries (for steam or alikes):
-    # dnf install mesa-va-drivers-freeworld.i686
+    dnf swap mesa-vulkan-drivers mesa-vulkan-drivers-freeworld
     ;;
   4 ) 
     # Proceed with the rest of the script
