@@ -1,7 +1,8 @@
 # 📚️ Linux Scripts
 This repository contains my post-installation scripts for various Linux distributions.
-   
-ⓘ All scripts must be run as **root**.
+
+> [!IMPORTANT]
+> All scripts must be run as **root**.
    
 ## Fedora Workstation 44
    
