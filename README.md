@@ -61,7 +61,7 @@ Suggested tools:
 - [ssh-audit](https://github.com/jtesta/ssh-audit) - SSH server & client security auditing
 ## Disable the ambient light sensor in GNOME
 For laptop users who cannot disable the ambient light sensor through the UEFI:  
-Copy the following file over to `/etc/dconf/db/local.d` and `/etc/dconf/db/gdm.d`
+Add this file to `/etc/dconf/db/local.d` and `/etc/dconf/db/gdm.d`
 > 01-disable-ambient-light-sensor.conf
 ```
 [org/gnome/settings-daemon/plugins/power]
