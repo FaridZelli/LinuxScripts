@@ -10,30 +10,30 @@ This repository contains my post-installation scripts for various Linux distribu
 - This script automates various maintenance tasks required after a fresh installation,   
   such as installing non-free drivers and codecs.
 - Please ensure that your system is up-to-date before running the script.
-  ```
-  dnf clean all && dnf distro-sync --refresh && reboot
-  ```
+```
+dnf clean all && dnf distro-sync --refresh && reboot
+```
    
-  ```
-  curl -o ~/fedora_ws_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/fedora_ws_base.sh && chmod a+x ~/fedora_ws_base.sh && ~/fedora_ws_base.sh ; rm -f ~/fedora_ws_base.sh
-  ```
+```
+curl -o ~/fedora_ws_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/fedora_ws_base.sh && chmod a+x ~/fedora_ws_base.sh && ~/fedora_ws_base.sh ; rm -f ~/fedora_ws_base.sh
+```
    
 ## openSUSE Tumbleweed
    
-### tumbleweed_base.sh (not actively maintained)
+### tumbleweed_base.sh (unmaintained)
 - This script automates various maintenance tasks required after a fresh installation,   
   such as installing non-free drivers and codecs.
 - Please ensure that your system is up-to-date before running the script.
-  ```
-  zypper clean && zypper refresh && zypper dup && reboot
-  ```
+```
+zypper clean && zypper refresh && zypper dup && reboot
+```
    
-  ```
-  curl -o ~/tumbleweed_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/tumbleweed_base.sh && chmod a+x ~/tumbleweed_base.sh && ~/tumbleweed_base.sh ; rm -f ~/tumbleweed_base.sh
-  ```
+```
+curl -o ~/tumbleweed_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/tumbleweed_base.sh && chmod a+x ~/tumbleweed_base.sh && ~/tumbleweed_base.sh ; rm -f ~/tumbleweed_base.sh
+```
    
 # 💡 Tips & Tricks
-Useful suggestions to improve your workflow.
+My shortlist of tweaks and utilities that others may find useful.
    
 ## Personalize Bash
 - Enable menu-complete:   
@@ -59,3 +59,12 @@ Suggested tools:
 Suggested tools:
 - [Lynis](https://github.com/CISOfy/lynis) - Security auditing tool for Linux
 - [ssh-audit](https://github.com/jtesta/ssh-audit) - SSH server & client security auditing
+## Disable the ambient light sensor in GNOME
+For laptop users who cannot disable the ambient light sensor through the UEFI:  
+Copy the following file over to `/etc/dconf/db/local.d` and `/etc/dconf/db/gdm.d`
+> 01-disable-ambient-light-sensor.conf
+```
+[org/gnome/settings-daemon/plugins/power]
+ambient-enabled=false
+```
+
