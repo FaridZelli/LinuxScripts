@@ -67,4 +67,4 @@ Add this file to `/etc/dconf/db/local.d` and `/etc/dconf/db/gdm.d`
 [org/gnome/settings-daemon/plugins/power]
 ambient-enabled=false
 ```
-
+Then run `dconf update`
