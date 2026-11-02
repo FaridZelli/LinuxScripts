@@ -2,14 +2,15 @@
 This repository contains my post-installation scripts for various Linux distributions.
 
 > [!IMPORTANT]
-> All scripts must be run as **root**.
+> All scripts must be run as **root**.  
+> Use `sudo su root` or `su root` before running these commands.
    
 ## Fedora Workstation 44
    
 ### fedora_ws_base.sh
 - This script automates various maintenance tasks required after a fresh installation,   
   such as installing non-free drivers and codecs.
-- Please ensure that your system is up-to-date before running the script.
+- Please ensure your system is up-to-date before running the script.
 ```
 dnf clean all && dnf distro-sync --refresh && reboot
 ```
@@ -23,7 +24,7 @@ curl -o ~/fedora_ws_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxSc
 ### tumbleweed_base.sh (unmaintained)
 - This script automates various maintenance tasks required after a fresh installation,   
   such as installing non-free drivers and codecs.
-- Please ensure that your system is up-to-date before running the script.
+- Please ensure your system is up-to-date before running the script.
 ```
 zypper clean && zypper refresh && zypper dup && reboot
 ```
@@ -33,7 +34,7 @@ curl -o ~/tumbleweed_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxS
 ```
    
 # 💡 Tips & Tricks
-My shortlist of tweaks and utilities that others may find useful.
+A shortlist of tweaks and utilities which you may find helpful after a fresh install.
    
 ## Personalize Bash
 - Enable menu-complete:   
@@ -51,6 +52,11 @@ grep -qF 'unset HISTFILE' ~/.bashrc || echo 'unset HISTFILE' >> ~/.bashrc
 ```
 echo 'export PS1="\[$(tput setaf 216)\]\u\[$(tput setaf 220)\]@\[$(tput setaf 222)\]\h \[$(tput setaf 229)\]\w \[$(tput sgr0)\]$ "' >> ~/.bashrc
 ```
+## Disable ambient light sensor in GNOME
+- For laptops that do not offer an option to disable the ambient light sensor through the UEFI:
+```
+mkdir -p /etc/dconf/db/{local,gdm}.d && printf '[org/gnome/settings-daemon/plugins/power]\nambient-enabled=false\n' | tee /etc/dconf/db/{local,gdm}.d/01-disable-ambient-light-sensor.conf >/dev/null && dconf update
+```
 ## Flatpaks and AppImages
 Suggested tools:
 - [Flatseal](https://flathub.org/apps/com.github.tchx84.Flatseal) - Flatpak permission manager
@@ -59,12 +65,3 @@ Suggested tools:
 Suggested tools:
 - [Lynis](https://github.com/CISOfy/lynis) - Security auditing tool for Linux
 - [ssh-audit](https://github.com/jtesta/ssh-audit) - SSH server & client security auditing
-## Disable the ambient light sensor in GNOME
-For laptop users who cannot disable the ambient light sensor through the UEFI:  
-Add this file to `/etc/dconf/db/local.d` and `/etc/dconf/db/gdm.d`
-> 01-disable-ambient-light-sensor.conf
-```
-[org/gnome/settings-daemon/plugins/power]
-ambient-enabled=false
-```
-Then run `dconf update`
