@@ -7,7 +7,7 @@ This repository contains my post-installation scripts for various Linux distribu
    
 ## Fedora Workstation 44
    
-### fedora_ws_base.sh
+### [fedora_ws_base.sh](/fedora_ws_base.sh)
 - This script automates various maintenance tasks required after a fresh installation,   
   such as installing non-free drivers and codecs.
 - Please ensure your system is up-to-date before running the script.
@@ -21,7 +21,11 @@ curl -o ~/fedora_ws_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxSc
    
 ## openSUSE Tumbleweed
    
-### tumbleweed_base.sh (unmaintained)
+### [tumbleweed_base.sh](/tumbleweed_base.sh) (unmaintained)
+<details><summary>Show</summary>
+
+<br>
+   
 - This script automates various maintenance tasks required after a fresh installation,   
   such as installing non-free drivers and codecs.
 - Please ensure your system is up-to-date before running the script.
@@ -32,6 +36,8 @@ zypper clean && zypper refresh && zypper dup && reboot
 ```
 curl -o ~/tumbleweed_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxScripts/main/tumbleweed_base.sh && chmod a+x ~/tumbleweed_base.sh && ~/tumbleweed_base.sh ; rm -f ~/tumbleweed_base.sh
 ```
+
+</details>
    
 # 💡 Tips & Tricks
 A shortlist of tweaks and utilities which you may find helpful after a fresh install.
