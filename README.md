@@ -65,7 +65,7 @@ Use `grubby` to add the following kernel command-line options to your boot entri
 ```
 grubby --update-kernel=ALL --args="rd.emergency=poweroff rd.shell=0"
 ```
-Then specify a timeout for your bootdrive in `/etc/crypttab` as follows.
+Then specify a `timeout=` for your bootdrive in `/etc/crypttab` as follows.
 ```
 nano /etc/crypttab
 ```
