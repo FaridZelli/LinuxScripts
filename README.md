@@ -40,16 +40,16 @@ curl -o ~/tumbleweed_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxS
 </details>
    
 # 💡 Tips & Tricks
-A shortlist of tweaks and utilities which you may find helpful after a fresh install.
+A shortlist of tweaks and utilities which you may find useful after a fresh install.
    
 ## Personalize Bash
 - Enable menu-complete:   
-Make your terminal more efficient by enabling directory completion
+Make it easier to navigate directories in the terminal by enabling tab completion.
 ```
 grep -qF 'TAB: menu-complete' ~/.inputrc || echo 'TAB: menu-complete' >> ~/.inputrc
 ```
 - Disable HISTFILE:   
-If you prefer not to save your command history
+If you prefer not to save your command history.
 ```
 grep -qF 'unset HISTFILE' ~/.bashrc || echo 'unset HISTFILE' >> ~/.bashrc
 ```
@@ -58,8 +58,26 @@ grep -qF 'unset HISTFILE' ~/.bashrc || echo 'unset HISTFILE' >> ~/.bashrc
 ```
 echo 'export PS1="\[$(tput setaf 216)\]\u\[$(tput setaf 220)\]@\[$(tput setaf 222)\]\h \[$(tput setaf 229)\]\w \[$(tput sgr0)\]$ "' >> ~/.bashrc
 ```
+## Shutdown on LUKS passphrase prompt timeout
+To have your system shutdown when the LUKS passphrase hasn't been entered for some time:
+  
+Use `grubby` to add the following kernel command-line options to your boot entries.
+```
+grubby --update-kernel=ALL --args="rd.emergency=poweroff rd.shell=0"
+```
+Then specify a timeout for your bootdrive in `/etc/crypttab` as follows.
+```
+nano /etc/crypttab
+```
+> For example:  
+> `luks-xxxxxxxx UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx none x-initrd.attach,timeout=300`
+
+And lastly, regenerate the `initramfs`.
+```
+dracut --regenerate-all --force
+```
 ## Disable ambient light sensor in GNOME
-- For laptops that do not offer an option to disable the ambient light sensor through the UEFI:
+For laptops that do not offer an option to disable the ambient light sensor through the UEFI:
 ```
 mkdir -p /etc/dconf/db/{local,gdm}.d && printf '[org/gnome/settings-daemon/plugins/power]\nambient-enabled=false\n' | tee /etc/dconf/db/{local,gdm}.d/01-disable-ambient-light-sensor.conf >/dev/null && dconf update
 ```
