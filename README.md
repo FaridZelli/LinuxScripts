@@ -5,7 +5,7 @@ This repository contains my post-installation scripts for various Linux distribu
 > All scripts must be run as **root**.  
 > Use `sudo su root` or `su root` before running these commands.
    
-## Fedora Workstation 44
+## Fedora Workstation / KDE 44
    
 ### [fedora_ws_base.sh](/fedora_ws_base.sh)
 - This script automates various maintenance tasks required after a fresh installation,   
@@ -40,7 +40,7 @@ curl -o ~/tumbleweed_base.sh https://raw.githubusercontent.com/FaridZelli/LinuxS
 </details>
    
 # 💡 Tips & Tricks
-A shortlist of tweaks and utilities which you may find useful after a fresh install.
+These are my personal notes for a fresh Fedora Workstation / KDE install.
    
 ## Personalize Bash
 - Enable menu-complete:   
@@ -58,7 +58,7 @@ grep -qF 'unset HISTFILE' ~/.bashrc || echo 'unset HISTFILE' >> ~/.bashrc
 ```
 echo 'export PS1="\[$(tput setaf 216)\]\u\[$(tput setaf 220)\]@\[$(tput setaf 222)\]\h \[$(tput setaf 229)\]\w \[$(tput sgr0)\]$ "' >> ~/.bashrc
 ```
-## Shutdown on LUKS passphrase prompt timeout
+## Shutdown system on LUKS passphrase prompt timeout
 To have your system shutdown when the LUKS passphrase hasn't been entered for some time:
   
 Use `grubby` to add the following kernel command-line options to your boot entries.
@@ -80,6 +80,13 @@ dracut --regenerate-all --force
 For laptops that do not offer an option to disable the ambient light sensor through the UEFI:
 ```
 mkdir -p /etc/dconf/db/{local,gdm}.d && printf '[org/gnome/settings-daemon/plugins/power]\nambient-enabled=false\n' | tee /etc/dconf/db/{local,gdm}.d/01-disable-ambient-light-sensor.conf >/dev/null && dconf update
+```
+## Use proper KDE theme for Qt apps in GNOME
+If Qt apps are displayed incorrectly (e.g. missing icons), add the `QT_QPA_PLATFORMTHEME=kde` environment variable.
+
+You can also increase the scaling factor of Qt apps with `QT_SCALE_FACTOR`:
+```
+flatpak override --user --env=QT_QPA_PLATFORMTHEME=kde --env=QT_SCALE_FACTOR=1.25
 ```
 ## Flatpaks and AppImages
 Suggested tools:
